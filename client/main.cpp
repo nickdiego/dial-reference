@@ -52,7 +52,7 @@ static string gIpAddress;
 
 static void printServerList( vector<DialServer*> list )
 {
-    int i;
+    unsigned i;
     vector<DialServer*>::iterator it;
     for( i = 0, it = list.begin(); it < list.end(); it++, i++ )
     {
@@ -62,7 +62,7 @@ static void printServerList( vector<DialServer*> list )
         (*it)->getUuid( uuid );
         macAddr    =(*it)->getMacAddress();
         wolTimeOut =(*it)->getWakeOnLanTimeout();
-        printf("%Zu: Server IP[%s] UUID[%s] FriendlyName[%s] MacAddress[%s] WakeOnLanTimeout[%d]\n", 
+        printf("%u: Server IP[%s] UUID[%s] FriendlyName[%s] MacAddress[%s] WakeOnLanTimeout[%d]\n", 
                i+1, (*it)->getIpAddress().c_str(),
                uuid.c_str(), name.c_str(), macAddr.c_str(), wolTimeOut);
     }
